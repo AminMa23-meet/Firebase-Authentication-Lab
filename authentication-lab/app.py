@@ -3,7 +3,7 @@ from flask import session as login_session
 import pyrebase
 
 app = Flask(__name__, template_folder='templates', static_folder='static')
-app.config['SECRET_KEY'] = 'super-secret-key'
+app.config[https://console.firebase.google.com/project/hello-fba5c/database/hello-fba5c-default-rtdb/data/~2F'SECRET_KEY'] = 'super-secret-key'
 
 config = {
   "apiKey": "AIzaSyDzLPjVpYpO6NOWlOy_eeJEFp2murgRo2M",
@@ -13,10 +13,11 @@ config = {
   "messagingSenderId": "785823535127",
   "appId": "1:785823535127:web:623cf167fd83c52d2e8c52",
   "measurementId": "G-6S06XY5385",
-  "databaseURL": ""
+  "databaseURL": "https://console.firebase.google.com/project/hello-fba5c/database/hello-fba5c-default-rtdb/data/~2F"
 }
 firebase = pyrebase.initialize_app(config)
 auth = firebase.auth()
+db = firebase.database()
 
 
 @app.route('/', methods=['GET', 'POST'])
